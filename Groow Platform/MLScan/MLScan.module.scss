@@ -1,0 +1,129 @@
+@import '~styles/Variables';
+
+.scanner {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: var(--app-height);
+
+  .notification-container {
+    position: absolute;
+    z-index: 4;
+    top: 5vw;
+    right: 0;
+    width: 100vw;
+    background: green;
+
+    .notifications {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 68vw;
+      margin: 0 0 0 5vw;
+      padding: 13px 10px 10px 10px;
+      animation: fadeInOut 3.5s normal forwards;
+      animation-timing-function: ease-in-out;
+      animation-delay: 0.5s;
+      text-align: center;
+      opacity: 0;
+      color: lighten($blue, 50%);
+      border-radius: 8px;
+      background: $blue;
+      box-shadow: $box-shadow;
+    }
+
+    .groowy {
+      position: absolute;
+      top: -33px;
+      right: -50vw;
+      width: 50vw;
+      height: 50vw;
+      transform: rotate(270deg);
+      animation: panInOut 4.5s normal forwards;
+      animation-timing-function: ease-in-out;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+
+  .click-field {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: var(--app-height);
+  }
+
+  .frame {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    .tokens {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      // animation: fadeInOut 3.5s normal forwards;
+      // animation-timing-function: ease-in-out;
+      // animation-delay: 0.5s;
+    }
+
+    svg {
+      width: 95vw;
+      max-width: 4000px;
+      height: 95vh;
+      max-height: 4000px;
+      opacity: 0.7;
+    }
+  }
+
+  video {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+@keyframes panInOut {
+  0% {
+    right: -50vw;
+  }
+
+  10% {
+    right: -15vw;
+  }
+
+  90% {
+    right: -15vw;
+  }
+
+  100% {
+    right: -50vw;
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
